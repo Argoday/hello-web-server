@@ -28,12 +28,12 @@ msg "Started $(basename $0) at $(/bin/date "+%F %T")"
 start_sec=$(/bin/date +%s.%N)
 
 msg "Checking that user set at least one load balancer"
-if test -z "$ELB_LIST"; then
+if test -z "$ELBLIST"; then
     error_exit "Must have at least one load balancer to register to"
 fi
 
 # Loop through all LBs the user set, and attempt to register this instance to them.
-for elb in $ELB_LIST; do
+for elb in $ELBLIST; do
     msg "Checking validity of load balancer named '$elb'"
     validate_elb $INSTANCE_ID $elb
     if [ $? != 0 ]; then
@@ -51,7 +51,7 @@ done
 
 # Wait for all Registrations to finish
 msg "Waiting for instance to register to its load balancers"
-for elb in $ELB_LIST; do
+for elb in $ELBLIST; do
     wait_for_state "elb" $INSTANCE_ID "InService" $elb
     if [ $? != 0 ]; then
         error_exit "Failed waiting for $INSTANCE_ID to return to $elb"
