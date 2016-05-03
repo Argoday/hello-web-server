@@ -12,7 +12,7 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-printenv
+
 . $(dirname $0)/aws-common.sh
 
 msg "Running AWS CLI with region: $(get_instance_region)"
@@ -26,6 +26,12 @@ fi
 # Get current time
 msg "Started $(basename $0) at $(/bin/date "+%F %T")"
 start_sec=$(/bin/date +%s.%N)
+
+printenv
+
+echo "----"
+echo "$ELB_LIST"
+echo "----"
 
 msg "Checking that user set at least one load balancer"
 if test -z "$ELB_LIST"; then
