@@ -3,7 +3,6 @@ jword/HelloWebServer:
   PkgInclude:
     - '*'
   PostInstall:
-    - printenv
     - ./deploy/deregister-from-elb.sh
     - ./deploy/setup.sh
   Exec:
