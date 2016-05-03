@@ -3,10 +3,10 @@ jword/HelloWebServer:
   PkgInclude:
     - '*'
   PostInstall:
-    - ./deploy/deregister-from-elb.sh
+    - . ./deploy/deregister-from-elb.sh
     - ./deploy/setup.sh
   Exec:
     - node ./src/hello.js
   PostStart:
-    - ./deploy/register-with-elb.sh
+    - . ./deploy/register-with-elb.sh
 
