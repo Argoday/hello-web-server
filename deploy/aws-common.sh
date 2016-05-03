@@ -13,10 +13,6 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
-# ELB_LIST defines which Elastic Load Balancers this instance should be part of.
-# The elements in ELB_LIST should be seperated by space.
-ELB_LIST=""
-
 # Under normal circumstances, you shouldn't need to change anything below this line.
 # -----------------------------------------------------------------------------
 
