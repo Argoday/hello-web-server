@@ -27,12 +27,6 @@ fi
 msg "Started $(basename $0) at $(/bin/date "+%F %T")"
 start_sec=$(/bin/date +%s.%N)
 
-printenv
-
-echo "----"
-echo "$ELBLIST"
-echo "----"
-
 msg "Checking that user set at least one load balancer"
 if test -z "$ELBLIST"; then
     error_exit "Must have at least one load balancer to deregister from"
