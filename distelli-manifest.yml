@@ -1,0 +1,9 @@
+jword/HelloWebServer:
+
+  PkgInclude:
+    - '*'
+  PreInstall:
+    - ./deploy/setup.sh
+  Exec:
+    - node ./src/hello.js
+
