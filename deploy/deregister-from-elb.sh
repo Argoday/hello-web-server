@@ -12,7 +12,7 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-
+printenv
 . $(dirname $0)/aws-common.sh
 
 msg "Running AWS CLI with region: $(get_instance_region)"
