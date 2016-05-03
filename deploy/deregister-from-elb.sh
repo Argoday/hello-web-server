@@ -13,7 +13,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
-. $(dirname $0)/aws-common.sh
+. ./deploy/aws-common.sh
 
 msg "Running AWS CLI with region: $(get_instance_region)"
 
