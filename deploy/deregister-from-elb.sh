@@ -30,16 +30,16 @@ start_sec=$(/bin/date +%s.%N)
 printenv
 
 echo "----"
-echo "$ELB_LIST"
+echo "$ELBLIST"
 echo "----"
 
 msg "Checking that user set at least one load balancer"
-if test -z "$ELB_LIST"; then
+if test -z "$ELBLIST"; then
     error_exit "Must have at least one load balancer to deregister from"
 fi
 
 # Loop through all LBs the user set, and attempt to deregister this instance from them.
-for elb in $ELB_LIST; do
+for elb in $ELBLIST; do
     msg "Checking validity of load balancer named '$elb'"
     validate_elb $INSTANCE_ID $elb
     if [ $? != 0 ]; then
