@@ -1,7 +1,7 @@
 jword/HelloWebServer:
 
   Build:
-    - echo "Build all the things!"
+    - echo "Build all thed things!"
   PkgInclude:
     - '*'
 
