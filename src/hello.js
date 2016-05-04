@@ -11,7 +11,7 @@ http.createServer(function (request, response) {
     userCount++;
 
     response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.write('Hello, world!\n\n');
+    response.write('Hello, world!!\n\n');
     response.write('This process has responded: '+userCount+' times\n\n');
     response.write('Hostname: ' + hostname);
     response.write('Stage: ' + stage);
