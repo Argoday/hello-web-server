@@ -1,12 +1,15 @@
 jword/HelloWebServer:
 
+  Build:
+    - echo "Build all the things!"
   PkgInclude:
     - '*'
+
   PostInstall:
     - ./deploy/setup.sh
-    - . ./deploy/deregister-from-elb.sh
+    - ./deploy/deregister-from-elb.sh
   Exec:
     - node ./src/hello.js
   PostStart:
-    - . ./deploy/register-with-elb.sh
+    - ./deploy/register-with-elb.sh
 
